@@ -1,34 +1,30 @@
 import React, { useState } from "react";
 
 function BookShelf() {
-  // State to store the list of books
+ 
   const [books, setBooks] = useState([]);
 
-  // State to handle form inputs for a new book
-  const [newBook, setNewBook] = useState({
+   const [newBook, setNewBook] = useState({
     title: "",
     author: ""
 
   });
-// Function to handle input changes
+ 
 const handleInputChange = (event) => {
     const { name, value } = event.target;
   
-    // Update the corresponding field in newBook while keeping the rest unchanged
-    setNewBook({
+     setNewBook({
       ...newBook,
       [name]: value
     });
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault(); // Stop the page from refreshing
+    event.preventDefault(); 
   
-    // Add the newBook object to the books array
-    setBooks([...books, newBook]);
+     setBooks([...books, newBook]);
   
-    // Reset newBook to clear the form fields
-    setNewBook({ title: "", author: "" });
+     setNewBook({ title: "", author: "" });
   };
   
   return (
